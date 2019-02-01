@@ -23,7 +23,7 @@ A webpage (using HTML, CSS, JavaScript and jQuery) for a pizza company where a u
 
 ## Setup/Installation Requirements
 
-* _Please visit Track Suggester repository <a href="https://github.com/MicaelaDJ/Pizza-Order">at this link</a>._
+* _Please visit Pizza-Order repository <a href="https://github.com/MicaelaDJ/Pizza-Order">at this link</a>._
 * _Clone repository or download to desktop_
 * _Open files using IDE (Atom or Visual Code Studio) to view code._
 * _Open index.html using your preferred web browser to preview webpage._

@@ -55,5 +55,9 @@ $(document).ready(function() {
     newPizza.calculatePrice();
     newPizza.orderReceipt();
     newPizzaOrder.pizzaItems.push(newPizza.receipt);
+
+    $("#cartContent").append("<p>" + newPizza.receipt + "</p>");
+    $("#itemPrice").append("<p>" + newPizza.price + "</p>");
+    $(".total").text("$" + newPizzaOrder.totalPrice);
   });
 });

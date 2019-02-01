@@ -1,33 +1,45 @@
 // Business End
 function Pizza(pizzaSize, pizzaToppings) {
-  this.pizzaSize = pizzaSize,
-  this.pizzaToppings = pizzaToppings
-};
+  this.pizzaSize = pizzaSize;
+  this.pizzaToppings = pizzaToppings;
+  this.price = 0;
+  this.receipt = "";
+}
 
-function Order() {
-  this.pizzaItems = [],
-  this.totalPrice = 0
+function PizzaOrder() {
+  this.pizzaItems = [];
+  this.totalPrice = 0;
 }
 
 var pizzaSizePrice = {
   "Small": 5
 }
 var pizzaToppingsPrice = {
-  "pineapple": .50,
+  "pineapple": .50
 }
 
 Pizza.prototype.calculatePrice = function() {
   var totalPizzaToppingPrice = 0;
   for (var index = 0; index < this.pizzaToppings.length; index++) {
-    totalPizzaToppingPrice += pizzaToppingsPrice(this.pizzaToppings[index]);
+    totalPizzaToppingPrice += pizzaToppingsPrice[this.pizzaToppings[index]];
   }
-  this.price = (pizzaSizePrice(this.size) + totalPizzaToppingPrice);
+  this.price = (pizzaSizePrice[this.size] + totalPizzaToppingPrice);
+}
+
+Pizza.prototype.orderReceipt = function() {
+  this.receipt = 0;
+  if (this.pizzaToppings.length !== 0) {
+    return (this.pizzaSize + " pie with " + this.pizzaToppings + "!");
+  }
+  else {
+    return (this.pizzaSize + " pizza!");
+  }
 }
 
 
 // User Interface
 $(document).ready(function() {
-  var pizzaOrder = new PizzaOrder();
+  var newPizzaOrder = new PizzaOrder();
   $("#orderInput").submit(function(event) {
     event.preventDefault();
     var pizzaToppings = [];
@@ -40,6 +52,8 @@ $(document).ready(function() {
     })
     var newPizza = new Pizza(pizzaSize, pizzaToppings);
 
-    newPizza.getPrice();
+    newPizza.calculatePrice();
+    newPizza.orderReceipt();
+    newPizzaOrder.pizzaItems.push(newPizza.receipt);
   });
 });

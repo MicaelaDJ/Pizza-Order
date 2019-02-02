@@ -12,22 +12,24 @@ function PizzaOrder() {
 }
 
 var pizzaSizePrice = {
-  "Small": 5
+  "Small": 5,
+  "Large": 10
 }
 var pizzaToppingsPrice = {
-  "pineapple": .50
+  "pineapple": 0.50,
+  "tomatoes": 0.50
 }
 
 Pizza.prototype.calculatePrice = function() {
   var totalPizzaToppingPrice = 0;
-  for (var index = 0; index < this.pizzaToppings.length; index++) {
-    totalPizzaToppingPrice += pizzaToppingsPrice[this.pizzaToppings[index]];
+  for (var i = 0; i < this.pizzaToppings.length; i++) {
+    totalPizzaToppingPrice += pizzaToppingsPrice[this.pizzaToppings[i]];
   }
-  this.price = (pizzaSizePrice[this.size] + totalPizzaToppingPrice);
+  this.price = (pizzaSizePrice[this.pizzaSize] + totalPizzaToppingPrice);
 }
 
 Pizza.prototype.orderReceipt = function() {
-  this.receipt = 0;
+  this.receipt = "pizza total";
   if (this.pizzaToppings.length !== 0) {
     return (this.pizzaSize + " pie with " + this.pizzaToppings + "!");
   }

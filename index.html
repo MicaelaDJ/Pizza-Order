@@ -16,41 +16,33 @@
         <h1>Pizza Space</h1>
       </div>
 
-      <form id="orderInput">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Small">Small
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Large">Large
-          </label>
-        </div>
+      <div class="form-group">
+        <label for="pizzaSize">Size?</label>
+        <ul>
+          <li><input type="checkbox" name="pizzaSize" value="Small">Small Pizza</li>
+          <li><input type="checkbox" name="pizzaSize" value="Medium">Medium Pizza</li>
+          <li><input type="checkbox" name="pizzaSize" value="Large">Large Pizza</li>
+        </ul>
+      </div>
 
-        <br>
+      <div class="form-group">
+        <label for="pizzaToppings">Toppings?</label>
+        <ul>
+          <li><input type="checkbox" name="pizzaVeggieToppings" value="Pineapple">Pineapple</li>
+          <li><input type="checkbox" name="pizzaVeggieToppings" value="Eggplant">Eggplant</li>
+          <li><input type="checkbox" name="pizzaVeggieToppings" value="Tomato">Tomato</li>
+          <li><input type="checkbox" name="pizzaVeggieToppings" value="Onion">Onion</li>
+          <li><input type="checkbox" name="pizzaMeatToppings" value="Chicken">Chicken</li>
+          <li><input type="checkbox" name="pizzaMeatToppings" value="Sausage">Sausage</li>
+        </ul>
+      </div>
 
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Pineapple">Pineapple
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Tomato">Tomato
-          </label>
-        </div>
+      <button type="button" id="priceButton"class="btn btn-info btn-lg">Calculate Price</button>
 
-        <button type="submit" class="btn btn-info btn-lg">Calculate Price</button>
-      </form>
-
-      <ul id="cartContent">
-      </ul>
-
-      <ul id="itemPrice">
-      </ul>
-
-      <span class="total">$0</span>
+      <div id="pizzaOrderSpace">
+        <p id="pizzaOrder"></p>
+        <p id="priceGoesHere"></p>
+      </div>
 
     </div>
   </body>

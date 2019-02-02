@@ -31,10 +31,10 @@ Pizza.prototype.calculatePrice = function() {
 Pizza.prototype.orderReceipt = function() {
   this.receipt = "pizza total";
   if (this.pizzaToppings.length !== 0) {
-    return (this.pizzaSize + " pie with " + this.pizzaToppings + "!");
+    console.log (this.pizzaSize + " pie with " + this.pizzaToppings + "!");
   }
   else {
-    return (this.pizzaSize + " pizza!");
+    console.log (this.pizzaSize + " pizza!");
   }
 }
 
@@ -56,7 +56,7 @@ $(document).ready(function() {
 
     newPizza.calculatePrice();
     newPizza.orderReceipt();
-    newPizzaOrder.pizzaItems.push(newPizza.receipt);
+    newPizzaOrder.pizzaItems.push(newPizza.orderReceipt);
 
     $("#cartContent").append("<p>" + newPizza.receipt + "</p>");
     $("#itemPrice").append("<p>" + newPizza.price + "</p>");

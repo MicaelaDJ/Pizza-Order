@@ -15,29 +15,37 @@
         <img id="logo" src="img/SpacePizza.png" alt="the space pizza record logo" class="center">
         <h1>Pizza Space</h1>
       </div>
+      <form id="pizzaForm">
 
-      <div class="form-group">
-        <label for="pizzaSize">Size?</label>
-        <ul>
-          <li><input type="checkbox" name="pizzaSize" value="Small">Small Pizza</li>
-          <li><input type="checkbox" name="pizzaSize" value="Medium">Medium Pizza</li>
-          <li><input type="checkbox" name="pizzaSize" value="Large">Large Pizza</li>
-        </ul>
-      </div>
+        <div class="form-group">
+          <label for="pizzaSize">Size?</label>
+          <ul>
+            <li><div class="radio-group">
+                <input type="radio" name="pizzaSize" value="Small" checked="checked"> Small Pizza
+            </div></li>
+            <li><div class="radio-group">
+                <input type="radio" name="pizzaSize" value="Medium" checked="checked"> Medium Pizza
+            </div></li>
+            <li><div class="radio-group">
+                <input type="radio" name="pizzaSize" value="Large" checked="checked"> Large Pizza
+            </div></li>
+          </ul>
+        </div>
 
-      <div class="form-group">
-        <label for="pizzaToppings">Toppings?</label>
-        <ul>
-          <li><input type="checkbox" name="pizzaVeggieToppings" value="Pineapple">Pineapple</li>
-          <li><input type="checkbox" name="pizzaVeggieToppings" value="Eggplant">Eggplant</li>
-          <li><input type="checkbox" name="pizzaVeggieToppings" value="Tomato">Tomato</li>
-          <li><input type="checkbox" name="pizzaVeggieToppings" value="Onion">Onion</li>
-          <li><input type="checkbox" name="pizzaMeatToppings" value="Chicken">Chicken</li>
-          <li><input type="checkbox" name="pizzaMeatToppings" value="Sausage">Sausage</li>
-        </ul>
-      </div>
+        <div class="form-group">
+          <label for="pizzaToppings">Toppings?</label>
+          <ul>
+            <li><input type="checkbox" name="pizzaVeggieToppings" value="Pineapple">Pineapple</li>
+            <li><input type="checkbox" name="pizzaVeggieToppings" value="Eggplant">Eggplant</li>
+            <li><input type="checkbox" name="pizzaVeggieToppings" value="Tomato">Tomato</li>
+            <li><input type="checkbox" name="pizzaVeggieToppings" value="Onion">Onion</li>
+          </ul>
+        </div>
 
-      <button type="button" id="priceButton"class="btn btn-info btn-lg">Calculate Price</button>
+        <button type="button" id="priceButton"class="btn btn-info btn-lg">Calculate Price</button>
+
+      </form>
+
 
       <div id="pizzaOrderSpace">
         <p id="pizzaOrder"></p>

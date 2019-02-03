@@ -24,6 +24,10 @@ h1 {
   color: white;
 }
 
+li {
+  color: white;
+}
+
 .btn-info {
   background-color: black;
   color: lightblue;

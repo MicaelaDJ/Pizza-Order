@@ -24,7 +24,7 @@ Pizza.prototype.checkSize = function() {
     this.price += pizzaBaseSize += 5;
   }
   else {
-    alert ("You gotta pick a size so we know how much dough to use!")
+    alert ("You gotta pick a size so we know how much dough to use!");
   }
 };
 
@@ -33,13 +33,13 @@ Pizza.prototype.checkToppings = function() {
     this.price += this.pizzaToppings.length * pizzaToppings;
   }
   else {
-    alert ("C'mon don't you want some delicious toppings?")
+    alert ("C'mon don't you want some delicious toppings?");
   }
 };
 
 Pizza.prototype.calculatePrice = function () {
   this.price += Pizza.checkSize += Pizza.checkToppings;
-}
+};
 
 Order.prototype.addPizza = function(pizza) {
   this.id ++;

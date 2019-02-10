@@ -1,53 +1,28 @@
 // Business End
 var pizzaBasePrice = 5;
-var pizzaToppings = 0.25;
-var order = new Order();
+var pizzaToppingsPrice = 0.25;
 
 function Pizza(pizzaSize, pizzaToppings) {
   this.pizzaSize = pizzaSize;
   this.pizzaToppings = pizzaToppings;
-  this.price = 0;
-}
-function Order() {
-  this.order = [];
-  this.id = 0;
 }
 
-Pizza.prototype.checkSize = function() {
-  if (this.pizzaBasePrice === "Small") {
-    this.price += pizzaBaseSize;
+Pizza.prototype.calculatePrice = function() {
+  var price = 0;
+  for (i = 0; i < this.pizzaToppings.length; i++) {
+    price += pizzaToppingsPrice;
   }
-  else if (this.pizzaBasePrice === "Medium") {
-    this.price += pizzaBaseSize += 2.50;
+  if (this.pizzaSize === "Small") {
+    price += pizzaBasePrice;
   }
-  else if (this.pizzaBaseSize === "Large") {
-    this.price += pizzaBaseSize += 5;
-  }
-  else {
-    alert ("You gotta pick a size so we know how much dough to use!");
-  }
-};
-
-Pizza.prototype.checkToppings = function() {
-  if (this.pizzaToppings === "pizzaToppings") {
-    this.price += this.pizzaToppings.length * pizzaToppings;
+  else if (this.pizzaSize === "Medium") {
+    price += pizzaBasePrice + 2.50;
   }
   else {
-    alert ("C'mon don't you want some delicious toppings?");
+    price += pizzaBasePrice + 5;
   }
-};
-
-Pizza.prototype.calculatePrice = function () {
-  this.price += Pizza.checkSize += Pizza.checkToppings;
-};
-
-Order.prototype.addPizza = function(pizza) {
-  this.id ++;
-  pizza.id = this.id;
-  this.order.push(pizza);
-  $(this.order).each(function() {
-    console.log($(this));
-  });
+  this.price = price;
+  return price.toFixed(2);
 };
 
 // User Interface
@@ -56,11 +31,16 @@ $(document).ready(function() {
     event.preventDefault();
 
     var pizzaSizeInput = $("input[name=pizzaSize]:checked").val();
-    var pizzaToppingsInput = $("input[name=pizzaToppings]:checked").val();
+    console.log(pizzaSizeInput)
+    var pizzaToppingsInput = [];
+    $("input[name=pizzaToppings]:checked").each(function() {
+      pizzaToppingsInput.push($(this).val())
+      console.log(pizzaToppingsInput)
+    })
     var newPizza = new Pizza(pizzaSizeInput, pizzaToppingsInput);
-    newPizza.calculatePrice;
+    var pizzaPrice = newPizza.calculatePrice()
 
-    $("#pizzaOrder").text(newPizza.pizzaSize + " with: " + pizzaToppings);
-    $("priceGoesHere").text(newPizza.calculatePrice());
+    $("#pizzaOrder").text(newPizza.pizzaSize + " Pizza with: " + newPizza.pizzaToppings);
+    $("#priceGoesHere").text("Total: $" + pizzaPrice);
   });
 });

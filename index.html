@@ -15,42 +15,45 @@
         <img id="logo" src="img/SpacePizza.png" alt="the space pizza record logo" class="center">
         <h1>Pizza Space</h1>
       </div>
-      <form id="pizzaForm">
-
-        <div class="form-group">
-          <label for="pizzaSize">Size?</label>
-          <ul>
-            <li><div class="radio-group">
-                <input type="radio" name="pizzaSize" value="Small" checked="checked"> Small Pizza
-            </div></li>
-            <li><div class="radio-group">
-                <input type="radio" name="pizzaSize" value="Medium" checked="checked"> Medium Pizza
-            </div></li>
-            <li><div class="radio-group">
-                <input type="radio" name="pizzaSize" value="Large" checked="checked"> Large Pizza
-            </div></li>
-          </ul>
-        </div>
-
-        <div class="form-group">
-          <label for="pizzaToppings">Toppings?</label>
-          <ul>
-            <li><input type="checkbox" name="pizzaVeggieToppings" value="Pineapple">Pineapple</li>
-            <li><input type="checkbox" name="pizzaVeggieToppings" value="Eggplant">Eggplant</li>
-            <li><input type="checkbox" name="pizzaVeggieToppings" value="Tomato">Tomato</li>
-            <li><input type="checkbox" name="pizzaVeggieToppings" value="Onion">Onion</li>
-          </ul>
-        </div>
-
+      <div class="col-md-6">
+        <form id="pizzaForm">
+          <div class="form-group">
+            <label for="pizzaSize">Size?</label>
+            <ul>
+              <p><div class="radio-group">
+                  <input type="radio" name="pizzaSize" value="Small" checked="checked"> Small Pizza
+              </div></p>
+              <p><div class="radio-group">
+                  <input type="radio" name="pizzaSize" value="Medium" checked="checked"> Medium Pizza
+              </div></p>
+              <p><div class="radio-group">
+                  <input type="radio" name="pizzaSize" value="Large" checked="checked"> Large Pizza
+              </div></p>
+            </ul>
+          </div>
+          <div class="form-group">
+            <label for="pizzaToppings">Toppings?</label>
+            <ul>
+              <p><input type="checkbox" name="pizzaToppings" value="Pineapple">Pineapple</p>
+              <p><input type="checkbox" name="pizzaToppings" value="Eggplant">Eggplant</p>
+              <p><input type="checkbox" name="pizzaToppings" value="Tomato">Tomato</p>
+              <p><input type="checkbox" name="pizzaToppings" value="Onion">Onion</p>
+            </ul>
+          </div>
         <button type="button" id="priceButton"class="btn btn-info btn-lg">Calculate Price</button>
 
-      </form>
-
-
-      <div id="pizzaOrderSpace">
-        <p id="pizzaOrder"></p>
-        <p id="priceGoesHere"></p>
+        </form>
       </div>
+
+      <div class="col-md-6">
+        <div id="pizzaOrderSpace">
+          <p id="pizzaOrder"></p>
+          <p id="priceGoesHere"></p>
+        </div>
+      </div>
+
+
+
 
     </div>
   </body>
